@@ -66,8 +66,10 @@ gulp.task('unit-test', function () {
   var testFiles = scripts_to_process.concat([
                     'src/**/*.html',
                     'src/assets/vendor/angular-mocks/angular-mocks.js',
+                    'src/assets/vendor/jquery/dist/jquery.js',
                     'test/unit/**/*.test.js'
                   ]);
+
   return gulp.src(testFiles)
           .pipe(karma({
             configFile: 'test/karma.config.js',

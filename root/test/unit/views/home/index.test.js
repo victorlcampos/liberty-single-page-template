@@ -10,11 +10,11 @@ describe('Home Index.html', function () {
             $scope.hello = 'Hello World';
         }
 
-        template = $compile(templateHtml)($scope);
+        template = $($compile(templateHtml)($scope));
         $scope.$digest();
     }));
 
     it('should show hello world', function () {
-        expect(template.text()).toContain('Hello World');
+        expect(template.find('div').text()).toContain('Hello World');
     });
 });
