@@ -1,7 +1,6 @@
 var gulp        = require('gulp'),
     nodemon     = require('gulp-nodemon'),
     inject      = require('gulp-inject'),
-    template    = require('gulp-template'),
     livereload  = require('gulp-livereload'),
     clean       = require('gulp-clean'),
     runSequence = require('run-sequence'),
@@ -56,7 +55,6 @@ gulp.task('styles', function() {
 
 gulp.task('scripts', function() {
   return gulp.src(scripts_to_process)
-    .pipe(template({apiRemoteUrl: 'http://localhost:1337'}))
     .pipe(gulp.dest('./build/assets/javascripts'))
     .pipe(inject("./build/index.html", {ignorePath: 'build'}))
     .pipe(gulp.dest('./build/'));
@@ -128,7 +126,6 @@ gulp.task('styles-deploy', function() {
 
 gulp.task('scripts-deploy', function() {
   return gulp.src(scripts_to_process)
-    .pipe(template({apiRemoteUrl: 'http://dry-woodland-3049.herokuapp.com/'}))
     .pipe(uglify())
     .pipe(concat('all.min.js'))
     .pipe(gulp.dest('./www/assets/javascripts'))

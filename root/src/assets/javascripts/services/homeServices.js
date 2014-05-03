@@ -1,5 +1,5 @@
 {%= name %}Services.factory('Home', ['$resource', function($resource){
-  return $resource(window.apiRemoteUrl.concat('home/:id'), {}, {
+  return $resource(window.remoteApis.home.concat('/:id'), {}, {
     'get':    {method:'GET'               },
     'create': {method:'POST'              },
     'update': {method:'PUT'               },
