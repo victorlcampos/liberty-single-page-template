@@ -1,3 +1,3 @@
-myExpensesControllers.controller('<%= className %>Ctrl', ['$filter','$scope', function ($filter, $scope) {
+{%= name %}Controllers.controller('<%= className %>Ctrl', ['$filter','$scope', function ($filter, $scope) {
 
 }]);
