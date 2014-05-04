@@ -8,7 +8,7 @@ module.exports = function(args) {
     },
     {
       file: 'serviceTest.js',
-      generatedFile: 'test/unit/services/'+name+'Service.js'
+      generatedFile: 'test/unit/services/'+name+'Service.test.js'
     }],
     replaceWords: {
       className: name.charAt(0).toUpperCase() + name.slice(1),
